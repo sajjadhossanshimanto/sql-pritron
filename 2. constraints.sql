@@ -3,13 +3,7 @@ use programminghero;
 drop table student;
 
 -- any three of them is ok or we can use mixture of them
-create table student(
-	roll char(4) primary key,
-    name varchar(50) not null,
-    email varchar(50) unique,
-    address varchar(120),
-    age int check(age>10)
-);
+
 
 create table student(
 	roll char(4),
@@ -56,9 +50,18 @@ insert into courses (coursename, university) values("che 101", "buet");
 
 -- foreign key
 create table Library(
-	book_name varchar(100),
+	book_name varchar(100)  primary key,
     who_hired_roll char(4),
     
     foreign key (who_hired_roll) references Student(roll)
+
 );
     
+create table Fees(
+	book_name varchar(100),
+    price double,
+    
+    foreign key (book_name) references Library(book_name)
+);
+
+drop table Fees;
