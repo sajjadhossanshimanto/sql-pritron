@@ -38,7 +38,7 @@ create table student(
 insert into student (roll, name, email, address, age) values("0001", "shimanto", "shimanto.123@gmail.com", "kalabagan dhaka", 12);
 insert into student (roll, name, email, address, age) values("0002", "raj", "raj.123@gmail.com", "kalabagan dhaka", 9);
 -- Error Code: 3819. Check constraint 'age_check' is violated.
-insert into student (roll, name, email, address, age) values("0003", "sajjad", "shimanto.123@gmail.com", "kalabagan dhaka", 12)
+insert into student (roll, name, email, address, age) values("0003", "sajjad", "shimanto.123@gmail.com", "kalabagan dhaka", 12);
 -- Error Code: 1062. Duplicate entry 'shimanto.123@gmail.com' for key 'student.uq_email_rule'
 
 
@@ -53,3 +53,12 @@ create table courses(
 insert into courses (coursename, university) values("che 101", "buet");
 -- pk is not actually shown as a seperated row
 
+
+-- foreign key
+create table Library(
+	book_name varchar(100),
+    who_hired_roll char(4),
+    
+    foreign key (who_hired_roll) references Student(roll)
+);
+    
