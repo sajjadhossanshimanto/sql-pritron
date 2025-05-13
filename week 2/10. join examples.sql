@@ -13,8 +13,12 @@ select ----
 from employees as e join employees as m on e.employee_id=m.employee_id
 
 -- print employee first_name, manager_name
-select e.first_name as employee_name, m.first_name as manager_name
-from employees as e join employees as m on e.manager_id=m.employee_id;
+select 
+    e.first_name as employee_name, 
+    m.first_name as manager_name
+from employees as e 
+    join employees as m 
+        on e.manager_id=m.employee_id;
 
 -- jesob department er kono employee nei
 select * from departments;
