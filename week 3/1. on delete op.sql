@@ -18,7 +18,7 @@ create table Email(
 	Roll varchar(5),
     CourseNo varchar(5),
     enroll_date date,
-    foreign key(roll) references Student(roll),
-    foreign key(CourseNo) references Course(CourseNo)
+    foreign key(roll) references Student(roll) on delete cascade,
+    foreign key(CourseNo) references Course(CourseNo) on delete set null
 );
 
